@@ -9,12 +9,10 @@ class Parent:
         print "yavvvv"
         
 class Child(Parent):
-    def display(self,name, age, sex='F'):
+    def display(self,name, age, sex):
         print"my %s is and %d age is %s" %(name, age, sex)
         
 
 c = Child()
-#c.shout()
 c.display("yogesh",26)
-#p = Parent()
-#p.display('yogesh', 25)
+
