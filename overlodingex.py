@@ -2,14 +2,19 @@ class Parent:
     def __init__(self):
         pass
     
-    def display(name, age):
-        return "my %s is and %d age"%(name, age)
+    def display(self,name,age):
+        print "my %s is and %d age"%(name, age)
         
-class Child():
-    def display(name, age, sex):
-        return "child method"
+    def shout(self):
+        print "yavvvv"
+        
+class Child(Parent):
+    def display(self,name, age, sex='F'):
+        print"my %s is and %d age is %s" %(name, age, sex)
         
 
 c = Child()
-c.display("yogesh",26,"M")
+#c.shout()
 c.display("yogesh",26)
+#p = Parent()
+#p.display('yogesh', 25)
