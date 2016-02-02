@@ -1,0 +1,79 @@
+<!-- A template for 2 column reports -->
+<script id="two_col_report_template" type="text/html">
+	<table id="<%= config.table_name %>" class="yui" style="display:none;">   
+		<thead>
+		    <tr>
+		        <td class="tableHeader"><%= config.table_label %></td>
+		        <td class="filter">
+		        	<img id="searchImage" src="./styles/images/binocular_pencil.png" title="Search" alt="Search" />
+		        	Search: <input id="<%= config.fltr_name %>" maxlength="20" size="20" type="text" />
+		            <img id="<%= config.clear_name %>" src="./styles/images/cross.png" title="Click to clear filter." alt="Clear Filter Image" />
+		        </td>
+		    </tr>
+			<tr class="toCSV">
+				<th><a href='#' title="Click to Sort"><%= config.col0_label %></a></th>
+				<th><a href='#' title="Click to Sort"><%= config.col1_label %></a></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% 	for(var i = 0; i < result.data.length; i++){ %>            		
+	            	<tr class="toCSV">
+		                 <td><%= result.data[i].name %></td>
+		                 <td style="text-align:center;"><%= result.data[i].count %></td>
+	                </tr>
+            <% 	} %>
+		</tbody>
+		<% 	if(config.show_total){ %>
+		<tr style="font-size:14px;color:maroon;border-top:2px;" class="toCSV">
+			<td style="text-align:center;"><b>Total</b></td>
+			<td style="text-align:center;"><b><%= result.total %></b></td>
+		</tr>		
+		<% 	} %>
+		<tfoot>
+		    <tr id="<%= config.pager_name %>">
+		        <td colspan="2">
+			        <img src="./styles/images/first.png" class="first"/>
+			        <img src="./styles/images/prev.png" class="prev"/>
+			        <input type="text" class="pagedisplay"/>
+			        <img src="./styles/images/next.png" class="next"/>
+			        <img src="./styles/images/last.png" class="last"/>
+			        <select class="pagesize">				        
+				        <option selected="selected" value="<%= config.paging_options[0] %>"><%= config.paging_options[0] %></option>
+
+						<% 	if(result.data.length>config.paging_options[1]){
+								for(var i = 0, opt = config.paging_options[0]; i > -1; i++){ 
+									opt = opt + config.paging_options[1]; %>
+					            	<option value="<%= opt %>"><%= opt %></option>
+					            	<% if(opt>=result.data.length) break;
+				             	} 
+				            }%>        
+
+			        </select>
+			        <input value="CSV" type="button" onclick="$('#<%= config.table_name %>').table2CSV()">
+			    </td>
+		    </tr>
+		</tfoot>
+	</table>
+</script>
+
+
+<!-- A template for Single Row 2 column reports -->
+<script id="single_row_two_col_report_template" type="text/html">
+	<table id="<%= config.table_name %>" class="yui">
+		<thead>
+		    <tr>
+		        <td class="tableHeader" colspan="2"><%= config.table_label %></td>			        
+		    </tr> 	
+			<tr>
+				<th><a href="JavaScript:void()" title="Item"><%= config.col0_label %></a></th>
+				<th><a href="JavaScript:void()" title="Count"><%= config.col1_label %></a></th>
+			</tr>
+		</thead>
+		<tbody>			
+        	<tr>
+                 <td><%= config.row_label %></td>
+                 <td style="text-align:center;font-size:14px;color:maroon;font-weight:bold;"><%= result.rows[0].value %></td>
+            </tr>            
+		</tbody>		
+	</table>	
+</script>

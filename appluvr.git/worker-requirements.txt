@@ -1,0 +1,11 @@
+CouchDB==0.8
+Fabric==1.2.0
+Flask==0.8
+Flask-Cache==0.3.4
+Flask-CouchDB==0.2.1
+Flask-Script==0.3.1
+Jinja2==2.5.5
+WTForms==0.6.3
+Werkzeug==0.6.2
+requests==0.5.0
+simplejson==2.1.1
