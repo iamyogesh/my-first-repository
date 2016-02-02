@@ -1,7 +1,0 @@
-.DS_Store
-.env
-*.pyc
-build
-dist
-env
-appluvr.egg-info

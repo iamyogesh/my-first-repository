@@ -1,2 +1,0 @@
-recursive-include appluvr_views/static *
-recursive-include appluvr_views/templates *

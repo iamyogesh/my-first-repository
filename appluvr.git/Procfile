@@ -1,1 +1,0 @@
-web: gunicorn runweb:views -t 3000 -b "0.0.0.0:$PORT" -w 5 -k gevent
