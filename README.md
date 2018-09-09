@@ -1,6 +1,9 @@
-# creating virtual env
-step1) sudo pip install virtualenv
- 
-step2) virtualenv --no-site-packages env
- 
-step3) source env/bin/activate
+Program which will take a mount point as an
+argument and return a list of all the files on the mountpoint and their disk usage in
+bytes in json
+
+To run code:
+$python getdiskusage.py <path>
+
+example:
+$python getdiskusage.py /tmp
