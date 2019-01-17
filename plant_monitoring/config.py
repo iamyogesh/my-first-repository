@@ -1,8 +1,8 @@
 
-username = "9964811126"
-passwd = 'pappikalla'
+username = "**********"
+passwd = '**********'
 
 message = "moisture crossed the limit please put water"
-number = "9964811126"
+number = "**********"
 
 moisture_threshold = 80
